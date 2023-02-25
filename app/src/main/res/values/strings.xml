@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">HackIllinois2023</string>
     <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
+    <string name="prompt_email">Email or Username</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -9,4 +9,17 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <!-- Strings used for the Home Screen Activity -->
+    <string name="title_activity_home_screen">HomeScreenActivity</string>
+    <string name="level_header">Level</string>
+    <string name="starting_level">1</string>
+    <string name="settings_button">Settings</string>
+    <string name="play_button">Play</string>
+    <string name="store_button">Store</string>
+    <string name="next_level">Next Level</string>
+    <string name="previous_level">Previous Level</string>
+
+    <!-- Strings used for the Game Activity -->
+    <string name="start_instructions">Game Instructions</string>
 </resources>
