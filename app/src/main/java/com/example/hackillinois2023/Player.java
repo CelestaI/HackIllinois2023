@@ -18,10 +18,6 @@ public class Player {
         this.password_hash = MD5_Hash_String;
     }
 
-    public int getID() {
-        return id;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -34,21 +30,10 @@ public class Player {
         return password_hash;
     }
 
-    public void setID(int ID) {
-        this.id = id;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setPasswordHash(String password_hash) {
-        this.password_hash = password_hash;
-    }
 
     /* Algorithm obtained from https://mobikul.com/converting-string-md5-hashes-android/ */
     public String md5(String s) {
