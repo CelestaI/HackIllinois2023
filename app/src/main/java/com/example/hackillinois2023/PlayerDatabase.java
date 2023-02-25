@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class PlayerDatabase extends SQLiteOpenHelper{
     /* Defines Database Name and Version */
     private static final String DATABASE_NAME = "players.db";
@@ -55,11 +58,30 @@ public class PlayerDatabase extends SQLiteOpenHelper{
     public void addNewPlayer(Player player) {
         SQLiteDatabase database = getWritableDatabase();
 
-        String query = "INSERT INTO TABLE_PLAYERS(email, username, password_hash) VALUES (" + player.getEmail() + ", " + player.getUsername() +
-                ", " + player.getPasswordHash() + ");";
+        String queryTablePlayers = "INSERT INTO players(email, username, password_hash) VALUES ('" + player.getEmail() + "', '" + player.getUsername() +
+                "', '" + player.getPasswordHash() + "');";
+        String queryTableGameData = "INSERT INTO game_data(level, coins) VALUES (0, 0);";
 
-        database.execSQL(query);
+        database.execSQL(queryTablePlayers);
+        database.execSQL(queryTableGameData);
         database.close();
+    }
+
+    public boolean checkLoginInfo(String username, String password) {
+        SQLiteDatabase database = getWritableDatabase();
+        String password_hash = md5(password);
+        String [] output = new String[] {username, password_hash};
+
+        String loginValidation = "SELECT id, username FROM players WHERE username = ? AND password_hash = ?";
+        Cursor c = database.rawQuery(loginValidation, output);
+
+        if (!c.moveToFirst()) {
+            database.close();
+            return false;
+        } else {
+            database.close();
+            return true;
+        }
     }
 
     public String viewTablePlayers() {
@@ -109,5 +131,25 @@ public class PlayerDatabase extends SQLiteOpenHelper{
 
         database.close();
         return databaseOutput;
+    }
+
+    /* Algorithm obtained from https://mobikul.com/converting-string-md5-hashes-android/ */
+    public String md5(String s) {
+        try {
+            /* Create MD5 Hash */
+            MessageDigest digest = java.security.MessageDigest.getInstance("MD5");
+            digest.update(s.getBytes());
+            byte messageDigest[] = digest.digest();
+
+            /* Create Hex String */
+            StringBuffer hexString = new StringBuffer();
+            for (int i=0; i<messageDigest.length; i++)
+                hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
+
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 }
