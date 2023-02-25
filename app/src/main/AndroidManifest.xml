@@ -15,7 +15,7 @@
             android:name=".LoginActivity"
             android:configChanges="orientation"
             android:exported="true"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,7 +25,7 @@
             android:name=".SignUpActivity"
             android:configChanges="orientation"
             android:exported="true"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".GameActivity"
             android:configChanges="orientation"

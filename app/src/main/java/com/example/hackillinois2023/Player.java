@@ -18,10 +18,6 @@ public class Player {
         this.password_hash = MD5_Hash_String;
     }
 
-    public int getID() {
-        return id;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -34,37 +30,26 @@ public class Player {
         return password_hash;
     }
 
-    public void setID(int ID) {
-        this.id = id;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public void setUsername(String username) {
         this.username = username;
     }
 
-    public void setPasswordHash(String password_hash) {
-        this.password_hash = password_hash;
-    }
 
     /* Algorithm obtained from https://mobikul.com/converting-string-md5-hashes-android/ */
     public String md5(String s) {
         try {
-            // Create MD5 Hash
+            /* Create MD5 Hash */
             MessageDigest digest = java.security.MessageDigest.getInstance("MD5");
             digest.update(s.getBytes());
             byte messageDigest[] = digest.digest();
 
-            // Create Hex String
+            /* Create Hex String */
             StringBuffer hexString = new StringBuffer();
             for (int i=0; i<messageDigest.length; i++)
                 hexString.append(Integer.toHexString(0xFF & messageDigest[i]));
 
             return hexString.toString();
-        }catch (NoSuchAlgorithmException e) {
+        } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
         return "";

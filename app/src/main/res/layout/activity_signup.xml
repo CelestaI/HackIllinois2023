@@ -8,7 +8,7 @@
     tools:context=".SignUpActivity">
 
     <TextView
-        android:id="@+id/signuptitle"
+        android:id="@+id/signup_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -18,28 +18,31 @@
         android:gravity="center"
         android:text="SIGN UP"
         android:textColor="@color/black"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/username_signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/username"
-        android:layout_below="@id/signuptitle"
+        android:layout_below="@id/signup_title"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="#30ffffff"
-        android:hint="Username"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:layout_margin="10dp"
-        android:padding="20dp"
         android:drawableLeft="@drawable/baseline_person_24"
-        android:drawablePadding="20dp"/>
+        android:drawablePadding="20dp"
+        android:hint="Username"
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/email"
-        android:layout_below="@id/username"
+        android:id="@+id/email_signup"
+        android:layout_below="@id/username_signup"
         android:background="#30ffffff"
         android:hint="Email"
         android:textColorHint="@color/black"
@@ -52,8 +55,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/password"
-        android:layout_below="@id/email"
+        android:id="@+id/password_signup"
+        android:layout_below="@id/email_signup"
         android:background="#30ffffff"
         android:hint="Password"
         android:textColorHint="@color/black"
@@ -67,8 +70,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/retypepassword"
-        android:layout_below="@id/password"
+        android:id="@+id/retype_password"
+        android:layout_below="@id/password_signup"
         android:background="#30ffffff"
         android:hint="Re-Enter Password"
         android:textColorHint="@color/black"
@@ -79,11 +82,11 @@
         android:drawablePadding="20dp"
         android:inputType="textPassword"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/registerbtn"
+    <Button
+        android:id="@+id/signup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/retypepassword"
+        android:layout_below="@id/retype_password"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
@@ -91,13 +94,14 @@
         android:layout_marginBottom="20dp"
         android:background="@color/design_default_color_on_secondary"
         android:text="SIGN UP"
-        android:textSize="25dp" />
+        android:onClick="signUpPlayerOnClick"
+        android:textSize="25sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/info"
-        android:layout_below="@+id/registerbtn"
+        android:layout_below="@+id/signup_button"
         android:text="or sign up with"
         android:layout_centerHorizontal="true"/>
 
