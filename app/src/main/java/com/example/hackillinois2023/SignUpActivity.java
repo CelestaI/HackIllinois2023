@@ -7,21 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class LoginActivity extends AppCompatActivity {
-    private Button login;
+public class SignUpActivity extends AppCompatActivity {
+    private Button signup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        login = findViewById(R.id.login);
-        login.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_signup);
+        signup = findViewById(R.id.registerbtn);
+        signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, HomeScreenActivity.class);
+                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
     }
-
-
 }
