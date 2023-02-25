@@ -4,17 +4,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
 public class GameActivity extends AppCompatActivity {
+    /* Creates a global level variable to save which level the player's current level */
+    public static String savedLevelNumber = "1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        /* Sets the End Game Pop-up to initially be invisible */
+        ConstraintLayout baseLayout = (ConstraintLayout) findViewById(R.id.activity_game);
+        CardView end_game_card = (CardView) findViewById(R.id.end_game_cardview);
+        end_game_card.setVisibility(View.GONE);
+
+        /* Gets the saved level information from the Home Screen Activity */
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String newLevelNumber = extras.getString("Level Number");
+            savedLevelNumber = newLevelNumber;
+            Log.i("TestOutput", newLevelNumber);
+        }
     }
 
     /* Opens an Instructions Pop-on which closes on touch */
@@ -38,5 +55,33 @@ public class GameActivity extends AppCompatActivity {
 
     public void startGame() {
         Log.i("TestOutput", "Game Start!");
+
+        /* Development 3 Second Timer to test End Game Pop-Up */
+        new CountDownTimer(3000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                /* EMPTY */
+            }
+            public void onFinish() {
+                endGame();
+            }
+        }.start();
+    }
+
+    /* Opens an End Game Pop-up that moves back to the Home Screen Activity when clicked */
+    public void endGame() {
+        ConstraintLayout baseLayout = (ConstraintLayout) findViewById(R.id.activity_game);
+        CardView end_game_card = (CardView) findViewById(R.id.end_game_cardview);
+        end_game_card.setVisibility(View.VISIBLE);
+
+        baseLayout.setOnClickListener(new View.OnClickListener() {
+            /* Starting Intent from OnClickListener:
+               https://stackoverflow.com/questions/19464100/starting-intent-from-onclicklistener */
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), HomeScreenActivity.class);
+                intent.putExtra("Level Number", savedLevelNumber);
+                startActivity(intent);
+            }
+        });
     }
 }

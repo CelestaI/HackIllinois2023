@@ -19,7 +19,22 @@ public class HomeScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        /* Updates the player's current level so it isn't always reset to Level 1 */
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String newLevelNumber = extras.getString("Level Number");
+            Log.i("TestOutput", newLevelNumber);
+            TextView levelSelector = (TextView) findViewById(R.id.levelNumber);
+            levelSelector.setText(newLevelNumber);
+        }
+    }
+
     /* Increases the current level */
+    /* TODO: Add a level cap based on how many levels a user has cleared */
     public void nextLevelOnClick(View v) {
         TextView levelSelector = (TextView) findViewById(R.id.levelNumber);
         String currentLevel = levelSelector.getText().toString();
@@ -28,24 +43,31 @@ public class HomeScreenActivity extends AppCompatActivity {
         levelSelector.setText(Integer.toString(newLevel));
     }
 
-    /* Decreases the current level */
+    /* Decreases the current level down to a minimum of Level 1 */
     public void prevLevelOnClick(View v) {
         TextView levelSelector = (TextView) findViewById(R.id.levelNumber);
         String currentLevel = levelSelector.getText().toString();
         int levelNumber = Integer.parseInt(currentLevel);
         int newLevel = levelNumber - 1;
+        if (newLevel <= 0) {
+            newLevel = 1;
+        }
         levelSelector.setText(Integer.toString(newLevel));
     }
 
     /* Moves to the Store Page Activity */
     public void storeOnClick(View v){
+        TextView levelNumberTextView = (TextView) findViewById(R.id.levelNumber);
         Intent intent = new Intent(this, StoreActivity.class);
+        intent.putExtra("Level Number", levelNumberTextView.getText().toString());
         startActivity(intent);
     }
 
     /* Moves to the Game Page Activity */
     public void playOnClick(View v){
+        TextView levelNumberTextView = (TextView) findViewById(R.id.levelNumber);
         Intent intent = new Intent(this, GameActivity.class);
+        intent.putExtra("Level Number", levelNumberTextView.getText().toString());
         startActivity(intent);
     }
 
