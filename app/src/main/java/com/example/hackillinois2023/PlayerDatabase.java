@@ -52,7 +52,62 @@ public class PlayerDatabase extends SQLiteOpenHelper{
         onCreate(database);
     }
 
-    public void addNewPlayer() {
+    public void addNewPlayer(Player player) {
+        SQLiteDatabase database = getWritableDatabase();
 
+        String query = "INSERT INTO TABLE_PLAYERS(email, username, password_hash) VALUES (" + player.getEmail() + ", " + player.getUsername() +
+                ", " + player.getPasswordHash() + ");";
+
+        database.execSQL(query);
+        database.close();
+    }
+
+    public String viewTablePlayers() {
+        String databaseOutput = "";
+        SQLiteDatabase database = getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_PLAYERS + " WHERE 1";
+        // This means to select all from the database
+
+        // The cursor will extract the entries from the database
+        Cursor c = database.rawQuery(query, null);
+
+        // Move the cursor to the first position and then move through the db to the last
+        c.moveToFirst();
+        while(!c.isAfterLast()) {
+            if(c.getString(c.getColumnIndexOrThrow(COLUMN_ID_INFO)) != null) {
+                databaseOutput += c.getString(c.getColumnIndexOrThrow(COLUMN_EMAIL)) + ", ";
+                databaseOutput += c.getString(c.getColumnIndexOrThrow(COLUMN_USERNAME)) + ", ";
+                databaseOutput += c.getString(c.getColumnIndexOrThrow(COLUMN_PASSWORD_HASH));
+                databaseOutput += "\n";
+            }
+            c.moveToNext();
+        }
+
+        database.close();
+        return databaseOutput;
+    }
+
+    public String viewTableGameData() {
+        String databaseOutput = "";
+        SQLiteDatabase database = getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_GAME_DATA + " WHERE 1";
+        // This means to select all from the database
+
+        // The cursor will extract the entries from the database
+        Cursor c = database.rawQuery(query, null);
+
+        // Move the cursor to the first position and then move through the db to the last
+        c.moveToFirst();
+        while(!c.isAfterLast()) {
+            if(c.getString(c.getColumnIndexOrThrow(COLUMN_ID_DATA)) != null) {
+                databaseOutput += c.getString(c.getColumnIndexOrThrow(COLUMN_LEVEL)) + ", ";
+                databaseOutput += c.getString(c.getColumnIndexOrThrow(COLUMN_COINS));
+                databaseOutput += "\n";
+            }
+            c.moveToNext();
+        }
+
+        database.close();
+        return databaseOutput;
     }
 }

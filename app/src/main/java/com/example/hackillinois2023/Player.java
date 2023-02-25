@@ -4,14 +4,13 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Player {
-    private String id;
+    private int id;
     private String email;
     private String username;
     private String password;
     private String password_hash;
 
-    public Player(String id, String email, String username, String password) {
-        this.id = id;
+    public Player(String email, String username, String password) {
         this.email = email;
         this.username = username;
         this.password = password;
@@ -19,7 +18,7 @@ public class Player {
         this.password_hash = MD5_Hash_String;
     }
 
-    public String getID() {
+    public int getID() {
         return id;
     }
 
@@ -27,12 +26,28 @@ public class Player {
         return email;
     }
 
-    public String getUserName() {
+    public String getUsername() {
         return username;
     }
 
     public String getPasswordHash() {
         return password_hash;
+    }
+
+    public void setID(int ID) {
+        this.id = id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPasswordHash(String password_hash) {
+        this.password_hash = password_hash;
     }
 
     /* Algorithm obtained from https://mobikul.com/converting-string-md5-hashes-android/ */
