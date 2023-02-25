@@ -28,17 +28,17 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".GameActivity"
-            android:configChanges="orientation"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:screenOrientation="landscape" />
         <activity
             android:name=".StoreActivity"
-            android:configChanges="orientation"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:screenOrientation="landscape" />
         <activity
             android:name=".HomeScreenActivity"
-            android:configChanges="orientation"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:screenOrientation="landscape" />
     </application>

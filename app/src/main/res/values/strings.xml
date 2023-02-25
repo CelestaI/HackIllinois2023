@@ -20,6 +20,7 @@
     <string name="settings_button">Settings</string>
     <string name="play_button">Play</string>
     <string name="store_button">Store</string>
+    <string name="logout_button">Logout</string>
     <string name="next_level">Next Level</string>
     <string name="previous_level">Previous Level</string>
 

@@ -63,6 +63,12 @@ public class HomeScreenActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /* Logs the Player out and moves back to the login screen */
+    public void logoutOnClick(View v){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
     /* Moves to the Game Page Activity */
     public void playOnClick(View v){
         TextView levelNumberTextView = (TextView) findViewById(R.id.levelNumber);
@@ -84,12 +90,14 @@ public class HomeScreenActivity extends AppCompatActivity {
         View prevLevelButton = findViewById(R.id.prevLevelButton);
         View nextLevelButton = findViewById(R.id.nextLevelButton);
         View playButton = findViewById(R.id.playButton);
+        View logoutButton = findViewById(R.id.logoutButton);
 
         settingsButton.setVisibility(View.GONE);
         storeButton.setVisibility(View.GONE);
         prevLevelButton.setVisibility(View.GONE);
         nextLevelButton.setVisibility(View.GONE);
         playButton.setVisibility(View.GONE);
+        logoutButton.setVisibility(View.GONE);
 
         /* Closes the Settings Pop-up and makes all buttons on the Game Page Activity visible */
         baseLayout.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +110,7 @@ public class HomeScreenActivity extends AppCompatActivity {
                 prevLevelButton.setVisibility(View.VISIBLE);
                 nextLevelButton.setVisibility(View.VISIBLE);
                 playButton.setVisibility(View.VISIBLE);
+                logoutButton.setVisibility(View.VISIBLE);
             }
         });
     }

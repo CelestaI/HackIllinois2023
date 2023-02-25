@@ -56,15 +56,7 @@ public class GameActivity extends AppCompatActivity {
     public void startGame() {
         Log.i("TestOutput", "Game Start!");
 
-        /* Development 3 Second Timer to test End Game Pop-Up */
-        new CountDownTimer(3000, 1000) {
-            public void onTick(long millisUntilFinished) {
-                /* EMPTY */
-            }
-            public void onFinish() {
-                endGame();
-            }
-        }.start();
+        testTimer();
     }
 
     /* Opens an End Game Pop-up that moves back to the Home Screen Activity when clicked */
@@ -83,5 +75,17 @@ public class GameActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    /* Development 3 Second Timer to test End Game Pop-Up */
+    public void testTimer() {
+        new CountDownTimer(3000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                /* EMPTY */
+            }
+            public void onFinish() {
+                endGame();
+            }
+        }.start();
     }
 }
