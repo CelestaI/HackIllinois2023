@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources layout_width="wrap_content" layout_height="wrap_content">
     <!-- geometry -->
-    <string name="heart_empty_path">
+    <string name="heart_empty_path" layout_width="wrap_content" layout_height="wrap_content">
         M32.95, 19 C31.036, 19 29.199, 19.8828338 28,
         21.2724796 C26.801, 19.8828338 24.964,
         19 23.05, 19 C19.6565, 19 17, 21.6321526 17,
@@ -22,7 +22,7 @@
         35.9536785 Z
     </string>
 
-    <string name="heart_full_path">
+    <string name="heart_full_path" layout_width="wrap_content" layout_height="wrap_content">
         M28, 39 L26.405, 37.5667575 C20.74,
         32.4713896 17, 29.1089918 17,
         24.9945504 C17, 21.6321526 19.6565,
@@ -33,11 +33,11 @@
         37.5667575 L28, 39 L28, 39 Z
     </string>
 
-    <string name="heart_clip_hidden">
+    <string name="heart_clip_hidden" layout_width="wrap_content" layout_height="wrap_content">
         M18 37 L38 37 L38 37 L18 37 Z
     </string>
 
-    <string name="heart_clip_shown">
+    <string name="heart_clip_shown" layout_width="wrap_content" layout_height="wrap_content">
         M0 0 L56 0 L56 56 L0 56 Z
     </string>
 </resources>

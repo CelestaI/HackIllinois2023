@@ -14,7 +14,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_weight="1"
+
         android:padding="3dp"
         android:text="@string/move"
         android:textColor="@color/white" />
@@ -26,7 +26,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_weight="1"
+
         android:padding="3dp"
         android:text="@string/slide"
         android:textColor="@color/white" />
@@ -37,7 +37,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_weight="1"
         android:padding="3dp"
         android:text="@string/blink"
         android:textColor="@color/white" />
@@ -49,9 +48,9 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="354dp"
-        android:layout_height="255dp"
-        android:contentDescriptions="@string/content_desc_cartoon image"
+        android:layout_width="265dp"
+        android:layout_height="187dp"
+        android:contentDescription="@string/content_desc_cartoon image"
         app:srcCompat="@drawable/hoodieBoy1" />
 
 </RelativeLayout>
