@@ -10,6 +10,9 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
+    <!-- Strings used for the Login Activity -->
+    <string name="login_title">LOGIN</string>
+
     <!-- Strings used for the Home Screen Activity -->
     <string name="title_activity_home_screen">HomeScreenActivity</string>
     <string name="level_header">Level</string>
@@ -17,6 +20,7 @@
     <string name="settings_button">Settings</string>
     <string name="play_button">Play</string>
     <string name="store_button">Store</string>
+    <string name="logout_button">Logout</string>
     <string name="next_level">Next Level</string>
     <string name="previous_level">Previous Level</string>
 

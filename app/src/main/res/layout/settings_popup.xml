@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/settings_popup"
+    android:background="@drawable/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomeScreenActivity">
 
@@ -12,6 +13,7 @@
         android:layout_height="match_parent"
         android:layout_margin="10dp"
         android:translationZ="90dp"
+        android:background="@drawable/background"
         app:cardElevation="24dp"
         app:cardCornerRadius="20dp"
         app:cardBackgroundColor="@color/white"

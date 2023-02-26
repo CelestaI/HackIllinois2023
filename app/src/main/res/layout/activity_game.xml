@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/activity_game"
+    android:background="@drawable/game_background"
     tools:context=".GameActivity">
 
     <androidx.cardview.widget.CardView
@@ -15,7 +16,7 @@
         android:translationZ="90dp"
         app:cardElevation="24dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/purple_500"
         app:cardMaxElevation="24dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
@@ -42,7 +43,7 @@
         android:translationZ="90dp"
         app:cardElevation="24dp"
         app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/purple_500"
         app:cardMaxElevation="24dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
