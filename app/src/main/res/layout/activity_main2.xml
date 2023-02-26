@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Button with Bounce Animation -->
+    <Button
+        android:id="@+id/BTNmove"
+        style="@style/TextAppearance.AppCompat.Widget.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:padding="3dp"
+        android:text="@string/move"
+        android:textColor="@color/white" />
+
+    <!--To start the slide animation of the image-->
+    <Button
+        android:id="@+id/BTNslide"
+        style="@style/TextAppearance.AppCompat.Widget.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:padding="3dp"
+        android:text="@string/slide"
+        android:textColor="@color/white" />
+    <!--To start the blink animation of the image-->
+    <Button
+        android:id="@+id/BTNblink"
+        style="@style/TextAppearance.AppCompat.Widget.Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:padding="3dp"
+        android:text="@string/blink"
+        android:textColor="@color/white" />
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:text="@string/directions" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="354dp"
+        android:layout_height="255dp"
+        android:contentDescriptions="@string/content_desc_cartoon image"
+        app:srcCompat="@drawable/hoodieBoy1" />
+
+</RelativeLayout>

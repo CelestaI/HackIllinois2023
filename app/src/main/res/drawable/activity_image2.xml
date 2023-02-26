@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".ui.login.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="840dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="170dp">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="688dp"
+            android:layout_height="867dp"
+            app:srcCompat="@drawable/human"
+            tools:layout_editor_absoluteX="67dp"
+            tools:layout_editor_absoluteY="521dp" />
+        
+        <LinearLayout
+            android:layout_width="@+id/imageView3"
+            android:layout_height="match_parent"
+            android:layout_below="@id/imageView3"
+            android:layout_marginTop= "30dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+        <Button
+            android:id="@+id/blink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margins="10dp"
+            android:layout_weight="1"
+            android:backgrounds="34CAF50"
+            android:padding="3dp"
+            android:text="BLINK"
+            android:texColor="@color/white" />
+
+
+
+        <Button
+            android:id="@+id/jump"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margins="10dp"
+            android:layout_weight="1"
+            android:backgrounds="34CAF50"
+            android:padding="3dp"
+            android:text="JUMP"
+            android:texColor="@color/white" />
+        <Button
+            android:id="@+id/run"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margins="10dp"
+            android:layout_weight="1"
+            android:backgrounds="34CAF50"
+            android:padding="3dp"
+            android:text="RUN"
+            android:texColor="@color/white" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
