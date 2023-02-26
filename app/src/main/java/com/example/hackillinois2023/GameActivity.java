@@ -4,12 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
+
+import com.q42.android.scrollingimageview.ScrollingImageView;
 
 public class GameActivity extends AppCompatActivity {
     /* Creates a global level variable to save which level the player's current level */
@@ -47,16 +54,14 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 start_instructions.setVisibility(View.GONE);
-
                 startGame();
             }
         });
     }
 
     public void startGame() {
-        Log.i("TestOutput", "Game Start!");
-
-        testTimer();
+        final ScrollingImageView scrollingBackground = (ScrollingImageView) findViewById(R.id.scrolling_background);
+        scrollingBackground.start();
     }
 
     /* Opens an End Game Pop-up that moves back to the Home Screen Activity when clicked */
